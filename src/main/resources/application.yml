@@ -1,0 +1,24 @@
+server:
+  port: 8090
+
+spring:
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092,localhost:9093,localhost:9094
+      key-deserializer: org.apache.kafka.common.serialization.IntegerDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer 
+      auto-offset-reset: earliest
+      max-poll-records: 10
+      group-id: grp1
+    producer:
+      bootstrap-servers: localhost:9092,localhost:9093,localhost:9094
+      key-serializer: org.apache.kafka.common.serialization.IntegerSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    admin:
+      properties:
+        '[bootstrap.servers]': localhost:9092
+      
+      
+        
+      
+      
